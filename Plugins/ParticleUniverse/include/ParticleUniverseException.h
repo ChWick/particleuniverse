@@ -30,7 +30,7 @@ namespace ParticleUniverse
 {
 	// If the Ogre renderer is replaced by another renderer, the type below must be re-implemented.
 	typedef Ogre::Exception Exception;
-	#define EXCEPT(num, desc, src) throw Ogre::ExceptionFactory::create( \
-		Ogre::ExceptionCodeType<num>(), desc, src, __FILE__, __LINE__ );
+	#define EXCEPT(num, desc, src) Ogre::ExceptionFactory::throwException( \
+			num, num, desc, src, __FILE__, __LINE__);
 }
 #endif
