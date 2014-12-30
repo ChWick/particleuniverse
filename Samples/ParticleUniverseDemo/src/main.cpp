@@ -1,7 +1,7 @@
 #include "ParticleUniverseDemo.h"
 
 #include <OgreException.h>
-#include <OISException.h>
+#include <OIS/OISException.h>
 #include <iostream>
 
 int main(int argc, char* argv[])

@@ -4,7 +4,7 @@
 #include <OgreWindowEventUtilities.h>
 #include <OgreFrameListener.h>
 
-#include <OIS.h>
+#include <OIS/OIS.h>
 
 namespace Ogre
 {
