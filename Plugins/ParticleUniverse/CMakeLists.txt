@@ -10,8 +10,29 @@ file(GLOB PROJECT_SOURCES
 )
 
 # The project's includes
-file(GLOB_RECURSE PROJECT_INCLUDES
+file(GLOB PROJECT_INCLUDES
         include/*.h
+)
+file(GLOB PROJECT_INCLUDES_EXTERNS
+        include/Externs/*.h
+)
+file(GLOB PROJECT_INCLUDES_PARTICLE_AFFECTORS
+        include/ParticleAffectors/*.h
+)
+file(GLOB PROJECT_INCLUDES_PARTICLE_BEHAVIOURS
+        include/ParticleBehaviours/*.h
+)
+file(GLOB PROJECT_INCLUDES_PARTICLE_EMITTERS
+        include/ParticleEmitters/*.h
+)
+file(GLOB PROJECT_INCLUDES_PARTICLE_EVENT_HANDLERS
+        include/ParticleEventHandlers/*.h
+)
+file(GLOB PROJECT_INCLUDES_PARTICLE_OBSERVERS
+        include/ParticleObservers/*.h
+)
+file(GLOB PROJECT_INCLUDES_PARTICLE_RENDERERS
+        include/ParticleRenderers/*.h
 )
 
 set (PARTICLEUNIVERSE_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include PARENT_SCOPE)
@@ -30,4 +51,25 @@ install(TARGETS ${PARTICLEUNIVERSE_PLUGIN_NAME}
 
 install(FILES ${PROJECT_INCLUDES}
    DESTINATION "include/ParticleUniverse"
+   COMPONENT headers)
+install(FILES ${PROJECT_INCLUDES_EXTERNS}
+   DESTINATION "include/ParticleUniverse/Externs"
+   COMPONENT headers)
+install(FILES ${PROJECT_INCLUDES_PARTICLE_AFFECTORS}
+   DESTINATION "include/ParticleUniverse/ParticleAffectors"
+   COMPONENT headers)
+install(FILES ${PROJECT_INCLUDES_PARTICLE_BEHAVIOURS}
+   DESTINATION "include/ParticleUniverse/ParticleBehaviours"
+   COMPONENT headers)
+install(FILES ${PROJECT_INCLUDES_PARTICLE_EMITTERS}
+   DESTINATION "include/ParticleUniverse/ParticleEmitters"
+   COMPONENT headers)
+install(FILES ${PROJECT_INCLUDES_PARTICLE_EVENT_HANDLERS}
+   DESTINATION "include/ParticleUniverse/ParticleEventHandlers"
+   COMPONENT headers)
+install(FILES ${PROJECT_INCLUDES_PARTICLE_OBSERVERS}
+   DESTINATION "include/ParticleUniverse/ParticleObservers"
+   COMPONENT headers)
+install(FILES ${PROJECT_INCLUDES_PARTICLE_RENDERERS}
+   DESTINATION "include/ParticleUniverse/ParticleRenderers"
    COMPONENT headers)
