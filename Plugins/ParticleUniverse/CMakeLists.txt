@@ -73,3 +73,15 @@ install(FILES ${PROJECT_INCLUDES_PARTICLE_OBSERVERS}
 install(FILES ${PROJECT_INCLUDES_PARTICLE_RENDERERS}
    DESTINATION "include/ParticleUniverse/ParticleRenderers"
    COMPONENT headers)
+
+if (OGRE_FOUND)
+  # copy on install aswell in the ogre directory to keep plugins together
+  install(TARGETS ${PARTICLEUNIVERSE_PLUGIN_NAME}
+    LIBRARY DESTINATION ${OGRE_PLUGIN_DIR_DBG}
+    COMPONENT libraries
+    CONFIGURATIONS Debug)
+  install(TARGETS ${PARTICLEUNIVERSE_PLUGIN_NAME}
+    LIBRARY DESTINATION ${OGRE_PLUGIN_DIR_REL}
+    COMPONENT libraries
+    CONFIGURATIONS Release;RelWithDebInfo;MinSizeRel)
+endif()
