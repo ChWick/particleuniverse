@@ -16,3 +16,9 @@ target_link_libraries(${PARTICLEUNIVERSE_DEMO_NAME} ${LIBS} ${OIS_LIBRARIES} ${P
 
 # Copy resources.cfg to the build folder
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/resources.cfg ${ParticleUniverse_BINARY_DIR}/resources.cfg COPYONLY)
+
+
+# on mac: add frameworks
+if (APPLE)
+  set_target_properties(${PARTICLEUNIVERSE_DEMO_NAME} PROPERTIES LINK_FLAGS "-F /Library/Frameworks -framework IOKIT -framework Cocoa -framework Carbon -framework CoreVideo -framework ApplicationServices -framework Ogre -framework OgreOverlay")
+endif()

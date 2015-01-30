@@ -1,5 +1,10 @@
 set(PROJECT_NAME "ParticleUniverse")
 
+# change install directory on mac to sdk
+if (APPLE)
+  set(CMAKE_INSTALL_PREFIX "sdk")
+endif()
+
 project(${PROJECT_NAME} CXX C)
 cmake_minimum_required(VERSION 2.8)
 
